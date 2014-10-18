@@ -28,7 +28,7 @@ end
 
 #### Configuration
 A variety of configuration options are available for RSpec Dispatch, some optional.  
-Setup your RSpec Dispatch block:
+Setup your RSpec Dispatch block (similar to your RSpec.config block):
 ```ruby
 RspecDispatch.configure do |config|
 	...

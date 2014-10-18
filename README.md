@@ -87,6 +87,11 @@ The "failures", "successes", and "pending" values will be arrays filled with dat
 }
 ```
 
+## TODO
+1. Needs the ability to add authentication parameters to POST request
+2. Clean up tests
+3. Clean up the Report module (specifically the text output and the #deliver method)  
+
 ## Contributing
 
 1. Fork it ( https://github.com/theef/rspec_dispatch/fork )

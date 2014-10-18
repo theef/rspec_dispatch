@@ -23,5 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
 
   s.add_dependency 'rspec'
+  s.add_dependency 'rspec-support'
   s.add_dependency 'httparty'
 end

@@ -10,21 +10,21 @@ module RspecDispatch
 		end
 
 		def track(example)
-			status = example.execution_result[:status]
+			status = example.metadata[:execution_result].status
 
 			content = {
-				description: example.full_description,
+				description: example.metadata[:full_description],
 				status: status,
-				run_time: example.execution_result[:run_time],
-				file_path: example.file_path,
-				line_number: example.location.split('.rb')[1]
+				run_time: example.metadata[:execution_result].run_time,
+				file_path: example.metadata[:file_path].gsub('./spec/', ''),
+				line_number: example.metadata[:location].split('.rb')[1].gsub(':', '')
 			}
 
-			if status == "failed"
+			if status == :failed
 				@failures << content
-			elsif status == "passed"
+			elsif status == :passed
 				@successes << content
-			elsif status == "pending"
+			elsif status == :pending
 				@pending << content
 			end
 		end
